@@ -1,0 +1,42 @@
+<!--
+=========================================================
+Name        : lab5_exe_B.html
+Assignment  : Lab 5, Exercise B
+Author(s)   : Brendan Smiley, Ryan Graham
+Submission  : February
+Description : Javascript strings, operators, and variables.
+=========================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript String and Variable Exercise</title>
+  </head>
+  <body>
+    <!-- Content goes here -->
+    <script>
+      let firstName = "Brendan";
+      let lastName = "Smiley";
+      let age = 22;
+      // 3.4
+      let fullName = firstName + " " + lastName;
+      console.log(fullName);
+      // 3.5
+      let currentYear = new Date().getFullYear();
+      let birthYear = currentYear - age;
+      console.log(birthYear);
+      // 3.6
+      console.log(fullName.length);
+      console.log(fullName.toUpperCase());
+      // 3.7
+      console.log(
+        `Hello, my name is ${fullName} and I am ${age} years old. I was born in ${birthYear}.`
+      );
+      // Bonus
+      let canVote = age > 18 ? true : false;
+      console.log(`I am eligible to vote: ${canVote}`);
+    </script>
+  </body>
+</html>
