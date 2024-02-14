@@ -2,8 +2,8 @@
 =========================================================
 Name        : lab5_exe_C.html
 Assignment  : Lab 5, Exercise C
-Author(s)   : Mahdi Ansari, William Arthur Philip Louis
-Submission  : May 21, 2030
+Author(s)   : Brendan Smiley, Ryan Graham
+Submission  : Febuary 14, 2024
 Description : DOM Elements.
 =========================================================
 -->
@@ -205,34 +205,80 @@ Description : DOM Elements.
 		</footer>
 		<script>
 			document.addEventListener('DOMContentLoaded', function afterRender() {
+
 				// Task 1: Set the text content of all elements with the class 'companyName' and remove their border
 
+				const element = document.querySelectorAll(".companyName");
+				element.forEach(element => {
+  					element.textContent = 'Ryan';
+					element.style.border = 'none';
+				});
 
 				// Task 2: Change the background color of the navigation bar
-				
+
+				document.querySelector("nav").style.backgroundColor = 'lightblue';
 
 				// Task 3: Hide the section titled 'What is full-stack?'
 
+				document.querySelector("article").style.display = 'none';
 
 				// Task 4: Create a new <p> element and append it to the 'About Us' section
 
+				var newParagraph = document.createElement('p');
+				var newLine = document.createTextNode('This is a new paragraph');
+				newParagraph.appendChild(newLine);
+				newParagraph.style.color = 'red';
+				document.querySelector('section').appendChild(newParagraph);
 
-				// Task 5: Add placeholders to input elements based on their corresponding label IDs
+				// Task 5: Add placeholders to input elements based on their corresponding label ID
 
+				document.querySelectorAll('label').forEach(label => {
+					let inputId = label.getAttribute('for');
+					if(inputId){
+						let inputElement = document.getElementById(inputId);
+						if(inputElement){
+							let placeholder = inputId.charAt(0).toUpperCase() + inputId.slice(1);
+							inputElement.setAttribute('placeholder', placeholder);
+						}
+					}
+				});
 
 				// Task 6: Set the src attribute of the image
 
+				const img = document.querySelector('img');
+				if(img)
+					img.setAttribute('src', './images/example.svg');
 
 				// Task 7: Add a new item in the navigation menu
 
+				var navigationMenu = document.querySelector('nav ul');
+        		var newListItem = document.createElement('li');
+        		var newAnchor = document.createElement('a');
+        		newAnchor.textContent = 'Blog';
+        		newAnchor.setAttribute('href', '#');
+        		newListItem.appendChild(newAnchor);
+        		navigationMenu.appendChild(newListItem);
 
 				// Task 8: Change the submit button text upon clicking and make it disabled
 
+				const button = document.querySelector('input[type=button]');
+				button.addEventListener("click", function(){
+					this.value = "Submitted";
+					this.disabled = true;
+				});
 
 				// Task 9: Change the text color of each item in the 'Related Links' to green
-
-
+				
+				const Relink = document.querySelectorAll("aside ul li a");
+				Relink.forEach(link => {
+					link.style.color = "green"
+				});
+				
 				// Task 10: Add a red solid border to the footer
+
+				var footer = document.querySelector('footer');
+        		footer.style.border = '2px solid red';
+
 			});
 		</script>
 	</body>
