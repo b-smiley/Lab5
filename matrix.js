@@ -196,9 +196,9 @@ const subtractMatrices = function (matrix1, matrix2) {
 
   // Matrix Verification
   if (n1 != n2) {
-    return "The matrices to add do not have the same row size. Please ensure the matrices have the same size for addition operation.";
+    return "The matrices do not have the same row size. Please ensure the matrices have the same size for subtraction operation.";
   } else if (m1 != m2) {
-    return "The matrices to add do not have the same column size. Please ensure the matrices have the same size for addition operation.";
+    return "The matrices do not have the same column size. Please ensure the matrices have the same size for subtraction operation.";
   }
 
   let resultantMatrix = [];
